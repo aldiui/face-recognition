@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "head.html" %}
+    </head>
+    <body>
+        {% include "navbar.html" %}
+
+        <section class="py-1 container">
+            <div class="row mt-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h3>Tambah Data</h3>
+                    <hr />
+                    <form class="form" method="post" action="/addprsn_submit">
+                        <div class="form-group mb-3">
+                            <label for="txtnbr" class="form-label">Person Id</label>
+                            <input type="text" class="form-control" id="txtnbr" name="txtnbr" value="{{ newnbr }}" readonly />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="txtname" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="txtname" name="txtname" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="optskill" class="form-label">Keahlian</label>
+                            <select class="form-control" name="optskill" id="optskill">
+                                <option value="SOFTWARE">Software</option>
+                                <option value="HARDWARE">Hardware</option>
+                                <option value="ELECTRICAL">Electrical</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Next" />
+                            <a href="/" type="button" class="btn btn-warning">Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

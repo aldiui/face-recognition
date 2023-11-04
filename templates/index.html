@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "head.html" %}
+    </head>
+    <body>
+        {% include "navbar.html" %}
+
+        <section class="py-1 container">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3>Data Personal</h3>
+                    <hr />
+                    <div class="d-flex justify-content-between gap-1">
+                        <a href="/addprsn" type="button" class="btn btn-success">Tambah Data</a>
+                        <a href="/fr_page" type="button" class="btn btn-info btn-warning">Face Recognition</a>
+                    </div>
+
+                    <br />
+                    <table class="table table-bordered" style="width: 100%">
+                        <thead>
+                            <tr>
+                                <th>Id Personal</th>
+                                <th>Nama</th>
+                                <th>Keahlian</th>
+                                <th>Status</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in data %}
+                            <tr>
+                                <td>{{item[0]}}</td>
+                                <td>{{item[1]}}</td>
+                                <td>{{item[2]}}</td>
+                                <td>{{item[3]}}</td>
+                                <td>{{item[4]}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
